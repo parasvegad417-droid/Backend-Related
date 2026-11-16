@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-[#f5f1e8] via-[#f5f1e8] to-[#e9eee6] font-['DM_Sans'] text-[#18231f]">
+    <main class="grid min-h-screen place-items-center bg-[radial-gradient(circle_at_9%_15%,rgba(227,109,69,.16),transparent_28%)] px-5 py-8 max-sm:p-0">
+        <section class="grid w-full max-w-[1000px] overflow-hidden border border-[#18231f]/10 bg-[#fffdf8] shadow-[0_24px_70px_rgba(38,53,44,.14)] md:grid-cols-[.82fr_1.18fr]" aria-label="Create account">
+            <div class="flex min-h-[590px] flex-col justify-between bg-[#24352d] p-[42px] text-[#f9f5ed] max-sm:min-h-0 max-sm:gap-14 max-sm:px-6 max-sm:py-7">
+                <div class="flex items-center gap-2.5 font-['Space_Grotesk'] text-[1.05rem] font-bold tracking-wide">
+                    <span class="h-3 w-3 rotate-45 bg-[#e36d45]" aria-hidden="true"></span>
+                    Northstar
+                </div>
+                <div>
+                    <h1 class="mb-[18px] max-w-[290px] font-['Space_Grotesk'] text-[clamp(2.3rem,4vw,3.8rem)] font-semibold leading-[.98] tracking-normal max-sm:max-w-[360px] max-sm:text-[2.55rem]">Make room for what matters.</h1>
+                    <p class="max-w-[280px] leading-relaxed text-[#c3cec7]">A simple account gives you a clear place to begin, build, and come back to your work.</p>
+                </div>
+                <div class="border-t border-white/20 pt-5 text-[.85rem] text-[#c3cec7] max-sm:hidden">Private by default. Built for a calmer start.</div>
+            </div>
+
+            <div class="p-[52px] max-md:px-10 max-sm:px-6 max-sm:py-9">
+                <p class="mb-2.5 text-[.76rem] font-bold uppercase tracking-[.14em] text-[#b94f2d]">Get started</p>
+                <h2 class="font-['Space_Grotesk'] text-3xl font-semibold">Create your account</h2>
+                <p class="mb-[30px] mt-2.5 text-[#68756f]">Set up your details in under a minute.</p>
+
+                <form class="grid gap-[18px]" action="/create" method="POST">
+                    <div class="grid gap-2">
+                        <label class="text-[.84rem] font-bold" for="userName">Full name</label>
+                        <input class="w-full rounded-[3px] border border-[#dce2da] bg-[#fbfaf5] px-[15px] py-3.5 font-['DM_Sans'] outline-none transition placeholder:text-[#9aa49e] focus:border-[#e36d45] focus:bg-white focus:ring-4 focus:ring-[#e36d45]/15" id="userName" type="text" name="userName" placeholder="e.g. Alex Morgan" autocomplete="name" required>
+                    </div>
+                    <div class="grid gap-2">
+                        <label class="text-[.84rem] font-bold" for="email">Email address</label>
+                        <input class="w-full rounded-[3px] border border-[#dce2da] bg-[#fbfaf5] px-[15px] py-3.5 font-['DM_Sans'] outline-none transition placeholder:text-[#9aa49e] focus:border-[#e36d45] focus:bg-white focus:ring-4 focus:ring-[#e36d45]/15" id="email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                    </div>
+                    <div class="grid grid-cols-[1fr_110px] gap-3.5 max-sm:grid-cols-1">
+                        <div class="grid gap-2">
+                            <label class="text-[.84rem] font-bold" for="password">Password</label>
+                            <input class="w-full rounded-[3px] border border-[#dce2da] bg-[#fbfaf5] px-[15px] py-3.5 font-['DM_Sans'] outline-none transition placeholder:text-[#9aa49e] focus:border-[#e36d45] focus:bg-white focus:ring-4 focus:ring-[#e36d45]/15" id="password" type="password" name="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required>
+                        </div>
+                        <div class="grid gap-2">
+                            <label class="text-[.84rem] font-bold" for="age">Age</label>
+                            <input class="w-full rounded-[3px] border border-[#dce2da] bg-[#fbfaf5] px-[15px] py-3.5 font-['DM_Sans'] outline-none transition placeholder:text-[#9aa49e] focus:border-[#e36d45] focus:bg-white focus:ring-4 focus:ring-[#e36d45]/15" id="age" type="number" name="age" placeholder="25" min="1" max="120" required>
+                        </div>
+                    </div>
+                    <button class="mt-1.5 rounded-[3px] bg-[#e36d45] px-[18px] py-[15px] font-bold text-white transition hover:-translate-y-px hover:bg-[#b94f2d] focus:outline-none focus:ring-4 focus:ring-[#e36d45]/30" type="submit">Create account <span aria-hidden="true">&rarr;</span></button>
+                    <p class="mt-0.5 text-[.76rem] leading-relaxed text-[#68756f]">By continuing, you agree to keep your account details accurate.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

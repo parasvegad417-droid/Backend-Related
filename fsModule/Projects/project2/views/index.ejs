@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="bg-blue-500 text-white p-4">
+      <h1 class="text-2xl font-bold">Welcome to My Website</h1>
+    </div>
+
+    <div>
+      <div class="container mx-auto p-4">
+        <form action="/create" method="POST" class="flex flex-col space-y-4">
+          <input
+            class="border border-gray-300 rounded py-2 px-4 focus:outline-none text-black focus:ring-2 focus:ring-blue-500"
+            type="text"
+            name="taskName"
+            placeholder="Title Of Your Message"
+          />
+          <textarea
+            class="border border-gray-300 rounded py-2 px-4 focus:outline-none text-black focus:ring-2 focus:ring-blue-500"
+            name="taskDescription"
+            placeholder="Enter your task description"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="tasks container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <% if(files && files.length > 0) { %>
+          <% files.forEach(file => { %>
+            <div class="task bg-white p-4 rounded shadow">
+              <h3 class="text-xl font-bold mb-2"><%= file %></h3>
+              <p class="text-gray-700">Description of <%= file %></p>
+              <div>
+                <a href="/edit/<%= file %>" class="m-2 bg-blue-500 text-white py-1 px-3 rounded">Edit FileName</a>
+                <a href="/task/<%= file %>" class="m-2 bg-gray-300 text-gray-700 py-1 px-3 rounded">View</a>
+              </div>
+            </div>
+          <% }); %>
+        <% } else { %>
+          <h1 class="text-2xl font-bold text-gray-700">No Tasks Found</h1>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
